@@ -1,6 +1,6 @@
 # node-net-repl
 
-REPL server/client over sockets that support autocomplete and colors.
+node.js REPL server/client over sockets that support autocomplete and colors.
 
 [![Build Status](https://secure.travis-ci.org/martinj/node-net-repl.png)](http://travis-ci.org/martinj/node-net-repl)
 
