@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "REPL over the network with autocomplete and color support. Both Server and Client",
   "main": "index.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
   "scripts": {
     "test": "node_modules/.bin/mocha test/*"
   },
