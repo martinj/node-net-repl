@@ -1,0 +1,26 @@
+{
+  "name": "net-repl",
+  "version": "0.1.0",
+  "description": "REPL over the network with autocomplete and color support. Both Server and Client",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martinj/node-net-repl"
+  },
+  "keywords": [
+    "repl",
+    "socket",
+    "server",
+    "client"
+  ],
+  "author": "Martin jonssonnsson <martin.jonsson@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "1.4.x",
+    "should": "*"
+  },
+  "bin": { "repl": "./bin/repl.js" }
+}
