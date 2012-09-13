@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-var net = require('net');
 
 function printHelp() {
 	console.log('Usage: repl-client <port|domain socket path> <address if port specified>\n');
@@ -21,29 +20,8 @@ function parseCmd() {
 	return process.argv.length > 3 ? [process.argv[2], process.argv[3]] : [process.argv[2]];
 }
 
-var sock = net.connect.apply(this, parseCmd());
+var repl = require('../')
 
-process.stdin.pipe(sock);
-sock.pipe(process.stdout);
+repl.connect.apply(repl, parseCmd());
 
-sock.on('connect', function () {
-	process.stdin.resume();
-	process.stdin.setRawMode(true);
-});
 
-sock.on('close', function done() {
-	process.stdin.setRawMode(false);
-	process.stdin.pause();
-	sock.removeListener('close', done);
-});
-
-process.stdin.on('end', function () {
-	sock.destroy();
-	console.log();
-});
-
-process.stdin.on('data', function (b) {
-	if (b.length === 1 && b[0] === 4) {
-		process.stdin.emit('end');
-	}
-});

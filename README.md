@@ -13,9 +13,12 @@ node.js REPL server/client over sockets that support autocomplete and colors.
 Creating a server
 
 	var repl = require('net-repl');
-	var srv = repl.createServer({ deleteSocketOnStart: true }).listen('repl.sock');
+	var srv = repl.createServer(opts).listen('repl.sock');
 
 Adding shortcut for connecting to repl on your application
+
+`opts` accepts all the options that are accepted by 
+[repl.start](http://nodejs.org/api/repl.html#repl_repl_start_options)
 
 Add the following to your package.json
 
@@ -64,4 +67,3 @@ To connect run
 ## Run Tests
 
 	npm install
-	npm test
