@@ -20,8 +20,6 @@ function parseCmd() {
 	return process.argv.length > 3 ? [process.argv[2], process.argv[3]] : [process.argv[2]];
 }
 
-var repl = require('../')
+var repl = require('../');
 
 repl.connect.apply(repl, parseCmd());
-
-
