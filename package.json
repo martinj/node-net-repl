@@ -1,6 +1,6 @@
 {
   "name": "net-repl",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "REPL over the network with autocomplete and color support. Both Server and Client",
   "main": "index.js",
   "engines": {
